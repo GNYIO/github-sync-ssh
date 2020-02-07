@@ -16,7 +16,7 @@ jobs:
     - name: repo-sync
       env: 
         SSH_PRIVATE_KEY: ${{secrets.SSH_PRIVATE_KEY}}
-      uses: repo-sync/github-sync@v2
+      uses: liangpeili/github-sync-ssh@v4
       with:
         source_repo: "git@github.com:GNYIO/gny-experiment.git"
         source_branch: "develop"
