@@ -1,11 +1,10 @@
 # github-sync-ssh action
 
-## Inputs
-
-## Outputs
+A GitHub Action for syncing the current repository using force push and ssh key.
 
 ## Example usage
 
+```
 on:
   schedule:
   - cron:  "*/15 * * * *"
@@ -22,3 +21,4 @@ jobs:
         source_repo: "git@github.com:GNYIO/gny-experiment.git"
         source_branch: "develop"
         destination_branch: "master"
+```
