@@ -1,0 +1,24 @@
+name: GitHub Repo Sync(SSH)
+author: Peili Liang <liangpeili@foxmail.com>
+description: Sync remote repository to current repository through SSH
+branding:
+  icon: 'git-branch'
+  color: 'black'
+inputs:
+  source_repo:
+    description: GitHub repo slug 
+    required: true
+  source_branch:
+    description: Branch name to sync from
+    required: true
+  destination_branch:
+    description: Branch name to sync to in this repo
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  env:
+    SSH_PRIVATE_KEY: ${{ inputs.ssh_private_key }}
+  args:
+    - ${{ inputs.source_repo }}
+    - ${{ inputs.source_branch }}:${{ inputs.destination_branch }}
