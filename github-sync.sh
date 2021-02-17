@@ -30,11 +30,11 @@ git remote add tmp_upstream "$UPSTREAM_REPO"
 
 # checkout branch
 
-git fetch tmp_upstream
-git fetch tmp_upstream --tags
+git fetch tmp_upstream --all
 
 git checkout ${SOURCE_BRANCH}
 
+echo "git version: $(git --version)"
 echo "print git tags: $(git tag)"
 
 git reset --hard $(git describe --tags --abbrev=0)
