@@ -30,7 +30,7 @@ git remote add tmp_upstream "$UPSTREAM_REPO"
 
 # checkout branch
 
-git fetch tmp_upstream --all
+git fetch tmp_upstream --tags --depth=1000000
 
 git checkout ${SOURCE_BRANCH}
 
